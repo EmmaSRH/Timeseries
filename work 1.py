@@ -1,13 +1,12 @@
+#####At first, we need to import modules.
 # -*- coding:utf-8 -*-
-import pandas as pd
-from datetime import datetime, timedelta
-import numpy as np
-from matplotlib import pyplot
-import matplotlib.pylab as plt
-from matplotlib.pylab import rcParams
-rcParams['figure.figsize'] = 15, 6
+import pandas as pd  #This is the initial module for time series
+from datetime import datetime, timedelta  #It can help do time deparse
+import numpy as np  #Do some calculate
+from matplotlib import pyplot  #For plot
+import matplotlib.pylab as plt  #Also for plot
 
-####Task 1: Loading the data – 5 pts
+####Task 1: Loading the data 
 dateparse = lambda dates: pd.datetime.strptime(dates, '%Y-%m')
 volume = pd.read_csv('volume_per_year.csv',index_col='Month',date_parser=dateparse)#read data
 print(volume.head())
